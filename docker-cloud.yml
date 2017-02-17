@@ -1,0 +1,5 @@
+web:
+  image: frog/rad-neo4j
+  ports:
+    - "7474:7474"
+    - "7687:7687"

@@ -1,0 +1,12 @@
+DOCKER_NAMESPACE = frog
+DOCKER_IMAGE_VERSION ?= latest
+DOCKER_REPOSITORY = rad-neo4j
+DOCKER_CONTAINER_NAME = rad-neo4j
+DOCKER_INSTANCE = 1
+DOCKER_PORTS = \
+	-p 7474:7474 \
+	-p 7473:7473 \
+	-p 7687:7687
+DOCKER_MAPPED_VOLUMES = -v $(shell pwd)/data:/data
+DOCKER_ENV = \
+	-e NEO4J_AUTH=neo4j/password
