@@ -1,5 +1,5 @@
 # RAD Neo4j
-A starting point for containerized Neo4j instances.  Based on RAD Container:  https://github.com/frog/rad-container
+A starting point for containerized Neo4j instances.  This is intended to be used for development purposes.  Consider a managed Neo4j solution for production scenarios.  Based on RAD Container:  https://github.com/frog/rad-container
 
 # Getting Started
 To get started using this Neo4j container, you must have the latest version of Docker installed on your system.  If you are using an older version of Docker, please uninstall it and use the appropriate installer from the docker website.
@@ -16,6 +16,14 @@ Once Docker is installed on your machine, follow the steps below to begin develo
 # Success
 1.  If successful, you will be able to login to the Neo4j admin panel located at `http://localhost:7474` with the user name and password you specified in your make_env file.
 2.  Data is volume mapped to the `/data` folder in the project.  This will allow you to rebuild your contianer without loosing your data.  The contents of this folder should never be commited back to your project repository.
+
+# Environment Variables
+
+You may pass additional environment variables to your container by including them in your `make_env` file.  Follow these steps to add new environment variables.
+
+1.  Add your environment variable to your `make_env` file inside the DOCKER_ENV specification.  Remember, the last line does not get a trailing slash.
+2.  Destroy your existing container and rebuild it using `make build`.
+3.  Run and re-attach to your updated container using `make shell`.
 
 # Further Reading
 
